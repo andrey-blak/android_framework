@@ -9,16 +9,16 @@ import android.widget.BaseExpandableListAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseExpandableAdapter<Group, Child, GroupHolder, ChildHolder> extends BaseExpandableListAdapter {
+public abstract class ExpandableHolderAdapter<Group, Child, GroupHolder, ChildHolder> extends BaseExpandableListAdapter {
     private final Context mContext;
     private final LayoutInflater mInflater;
     private List<? extends Group> mGroups;
 
-    protected BaseExpandableAdapter(Context context) {
+    protected ExpandableHolderAdapter(Context context) {
         this(context, null);
     }
 
-    protected BaseExpandableAdapter(Context context, List<? extends Group> groups) {
+    protected ExpandableHolderAdapter(Context context, List<? extends Group> groups) {
         mGroups = (groups != null) ? groups : new ArrayList<Group>();
         mContext = context;
 
@@ -29,7 +29,7 @@ public abstract class BaseExpandableAdapter<Group, Child, GroupHolder, ChildHold
         return mContext;
     }
 
-    public LayoutInflater getInflater() {
+    protected LayoutInflater getInflater() {
         return mInflater;
     }
 
@@ -46,9 +46,6 @@ public abstract class BaseExpandableAdapter<Group, Child, GroupHolder, ChildHold
     public Group getGroup(int groupPosition) {
         return mGroups.get(groupPosition);
     }
-
-    @Override
-    public abstract Child getChild(int groupPosition, int childPosition);
 
     @Override
     public long getGroupId(int groupPosition) {
@@ -106,10 +103,13 @@ public abstract class BaseExpandableAdapter<Group, Child, GroupHolder, ChildHold
         return convertView;
     }
 
+
     protected abstract int getGroupResourceId();
     protected abstract GroupHolder createGroupHolder(View view);
     protected abstract void initGroupView(View view, GroupHolder holder, Group item, int groupPosition, boolean isExpanded);
 
+    @Override
+    public abstract Child getChild(int groupPosition, int childPosition);
     protected abstract int getChildResourceId();
     protected abstract ChildHolder createChildHolder(View view);
     protected abstract void initChildView(View view, ChildHolder holder, Child item, int groupPosition, int childPosition, boolean isLastChild);

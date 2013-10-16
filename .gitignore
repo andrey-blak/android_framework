@@ -30,6 +30,6 @@ proguard_logs/
 
 #
 /*
-!utils/
-!utils_samples/
+!android_framework/
+!android_framework_samples/
 !.gitignore

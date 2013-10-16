@@ -18,7 +18,7 @@ public class SimpleTextWatcher implements TextWatcher {
     }
 
     public void setListener(TextChangedListener listener) {
-        mListener = listener;
+        mListener = (listener != null) ? listener : NULL_TEXT_CHANGED_LISTENER;
     }
 
     @Override
@@ -31,12 +31,16 @@ public class SimpleTextWatcher implements TextWatcher {
 
     @Override
     public void afterTextChanged(Editable s) {
-        if (mListener != null) {
-            mListener.afterTextChanged(s);
-        }
+        mListener.afterTextChanged(s);
     }
 
     public static interface TextChangedListener {
         public void afterTextChanged(Editable s);
     }
+
+    public static final TextChangedListener NULL_TEXT_CHANGED_LISTENER = new TextChangedListener() {
+        @Override
+        public void afterTextChanged(Editable s) {
+        }
+    };
 }

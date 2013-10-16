@@ -1,10 +1,11 @@
-package blak.android.utils;
+package com.example;
 
 import android.content.Context;
 import android.os.Environment;
 
 import java.io.*;
 
+// TODO check
 public class FileUtils {
     private FileUtils() {
     }
@@ -15,17 +16,12 @@ public class FileUtils {
         return writable;
     }
 
-    public static void printFileException(File file) {
-        IOException ioException = new IOException("IOExeption:" + file.getAbsoluteFile());
-        ioException.printStackTrace();
-    }
-
-    public static File externalDirectory(String appDirectory) {
+    public static File externalDirectory(String appDirectory) throws IOException {
         File dir = new File(Environment.getExternalStorageDirectory(), appDirectory);
         if (!dir.exists()) {
             //if (!dir.mkdirs())
             {
-                printFileException(dir);
+                throw new IOException("IOExeption:" + dir.getAbsoluteFile());
             }
         }
         return dir;
