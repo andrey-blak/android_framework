@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="afs__black">#000</color>
+    <color name="afs__dk_gray">#444</color>
+    <color name="afs__gray">#888</color>
+    <color name="afs__lt_gray">#ccc</color>
+    <color name="afs__white">#fff</color>
+    <color name="afs__red">#f00</color>
+
+    <color name="afs__dk_red">#800</color>
+    <color name="afs__green">#0f0</color>
+
+    <color name="afs__dk_green">#080</color>
+
+    <color name="afs__blue">#00f</color>
+
+    <color name="afs__yellow">#ff0</color>
+    <color name="afs__cian">#0ff</color>
+    <color name="afs__magenta">#f0f</color>
+
+    <color name="afs__orange">#f80</color>
+</resources>

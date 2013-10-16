@@ -3,6 +3,8 @@ package blak.android;
 import android.view.View;
 import android.widget.AdapterView;
 
+import blak.android.adapters.ItemClickListener;
+
 public class Listeners {
     public static final View.OnClickListener NULL_CLICK_LISTENER = new View.OnClickListener() {
         @Override
@@ -10,9 +12,15 @@ public class Listeners {
         }
     };
 
-    public static final AdapterView.OnItemClickListener NULL_ITEM_CLICK_LISTENER = new AdapterView.OnItemClickListener() {
+    public static final AdapterView.OnItemClickListener NULL_ON_ITEM_CLICK_LISTENER = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        }
+    };
+
+    public static final ItemClickListener NULL_ITEM_CLICK_LISTENER = new ItemClickListener() {
+        @Override
+        public void onClick(View view, int position) {
         }
     };
 }

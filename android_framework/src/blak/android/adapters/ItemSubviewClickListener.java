@@ -2,13 +2,15 @@ package blak.android.adapters;
 
 import android.view.View;
 
-public class ClickItemListener implements View.OnClickListener {
+import blak.android.Listeners;
+
+public class ItemSubviewClickListener implements View.OnClickListener {
     private ItemClickListener mItemClickListener;
 
-    public ClickItemListener() {
+    public ItemSubviewClickListener() {
     }
 
-    public ClickItemListener(ItemClickListener itemClickListener) {
+    public ItemSubviewClickListener(ItemClickListener itemClickListener) {
         mItemClickListener = itemClickListener;
     }
 
@@ -17,7 +19,7 @@ public class ClickItemListener implements View.OnClickListener {
     }
 
     public void setItemClickListener(ItemClickListener itemClickListener) {
-        mItemClickListener = itemClickListener;
+        mItemClickListener = (itemClickListener != null)? itemClickListener : Listeners.NULL_ITEM_CLICK_LISTENER;
     }
 
     @Override
