@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:background="@color/afs__lt_gray"
+        >
+
+    <TextView
+            android:id="@+id/afs__item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="@color/afs__black"
+            android:text="Name"
+            />
+
+    <TextView
+            android:id="@+id/afs__item_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="@color/afs__black"
+            android:text="Description"
+            />
+
+</LinearLayout>

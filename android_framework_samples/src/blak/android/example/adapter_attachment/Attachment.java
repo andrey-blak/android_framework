@@ -1,4 +1,4 @@
-package com.example.adapter_attachment;
+package blak.android.example.adapter_attachment;
 
 public class Attachment {
     public String fileName;

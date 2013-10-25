@@ -1,11 +1,15 @@
-package com.example.adapter_attachment;
+package blak.android.example.adapter_attachment;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.example.R;
+import blak.android.adapters.ItemClickListener;
+import blak.android.example.R;
+import blak.android.utils.SimpleMessage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +38,21 @@ public class AttachmentsActivity extends Activity {
         attachments.add(new Attachment("10.prc", "sdrujh"));
 
         ListView listView = (ListView) findViewById(R.id.afs__listview);
-        ListAdapter adapter = new AttachmentsAdapter(this, attachments);
+        AttachmentsAdapter adapter = new AttachmentsAdapter(this, attachments);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SimpleMessage.show(getApplication(), "Click");
+            }
+        });
+
+        adapter.setEditListener(new ItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                SimpleMessage.show(getApplication(), "Edit", position);
+            }
+        });
     }
 }
