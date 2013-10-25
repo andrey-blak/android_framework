@@ -1,4 +1,4 @@
-package blak.android.example.adapter_simple;
+package blak.android.example.adaptersimple;
 
 import android.content.Context;
 import android.view.View;

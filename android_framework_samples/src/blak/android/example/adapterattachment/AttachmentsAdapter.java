@@ -1,4 +1,4 @@
-package blak.android.example.adapter_attachment;
+package blak.android.example.adapterattachment;
 
 import android.content.Context;
 import android.view.View;

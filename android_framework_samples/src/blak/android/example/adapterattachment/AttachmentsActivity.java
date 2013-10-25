@@ -1,10 +1,9 @@
-package blak.android.example.adapter_attachment;
+package blak.android.example.adapterattachment;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import blak.android.adapters.ItemClickListener;

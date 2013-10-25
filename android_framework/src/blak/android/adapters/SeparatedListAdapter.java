@@ -11,11 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SeparatedListAdapter extends BaseAdapter {
-    public final List<Section> mSections = new ArrayList<Section>();
+    public static final int TYPE_SECTION_HEADER = 0;
+
+    private final List<Section> mSections = new ArrayList<Section>();
 
     // TODO extract creation of mHeaderAdapter
     public final ArrayAdapter<String> mHeaderAdapter;
-    public static final int TYPE_SECTION_HEADER = 0;
 
     public SeparatedListAdapter(Context context, int headerId) {
         mHeaderAdapter = new ArrayAdapter<String>(context, headerId);

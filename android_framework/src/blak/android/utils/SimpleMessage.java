@@ -12,6 +12,14 @@ public class SimpleMessage {
         show(context, text, Toast.LENGTH_SHORT);
     }
 
+    public static void showShort(Context context, int stringId) {
+        showShort(context, context.getString(stringId));
+    }
+
+    public static void showShort(Context context, CharSequence text) {
+        show(context, text, Toast.LENGTH_SHORT);
+    }
+
     public static void showLong(Context context, int stringId) {
         showLong(context, context.getString(stringId));
     }
@@ -27,7 +35,7 @@ public class SimpleMessage {
     public static void show(Context context, Object... params) {
         StringBuilder buff = new StringBuilder();
         for (Object object : params) {
-            buff.append(object == null ? "null" : object.toString());
+            buff.append(object);
             buff.append(" ");
         }
         Toast.makeText(context, buff.toString(), Toast.LENGTH_SHORT).show();

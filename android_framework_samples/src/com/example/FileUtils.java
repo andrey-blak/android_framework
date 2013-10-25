@@ -7,13 +7,16 @@ import java.io.*;
 
 // TODO check
 public class FileUtils {
+    private static final int k = 1024;
+
     private FileUtils() {
     }
 
     public static boolean isSDCardWritable() {
         String state = Environment.getExternalStorageState();
-        boolean writable = Environment.MEDIA_MOUNTED.equals(state) && !Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
-        return writable;
+        boolean mounted = Environment.MEDIA_MOUNTED.equals(state);
+        boolean readOnly = Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
+        return mounted && !readOnly;
     }
 
     public static File externalDirectory(String appDirectory) throws IOException {
@@ -40,8 +43,8 @@ public class FileUtils {
     }
 
     public static void copy(InputStream from, OutputStream to) throws IOException {
-        int buffersize = 10 * 1024;
-        byte[] buffer = new byte[buffersize];
+        int bufferSize = 10 * k;
+        byte[] buffer = new byte[bufferSize];
 
         for (int bytes = from.read(buffer); bytes >= 0; bytes = from.read(buffer)) {
             to.write(buffer, 0, bytes);

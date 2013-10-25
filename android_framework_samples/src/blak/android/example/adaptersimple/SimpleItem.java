@@ -1,4 +1,4 @@
-package blak.android.example.adapter_simple;
+package blak.android.example.adaptersimple;
 
 public class SimpleItem {
     public String name;

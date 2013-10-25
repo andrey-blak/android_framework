@@ -1,4 +1,4 @@
-package blak.android.example.adapter_simple;
+package blak.android.example.adaptersimple;
 
 import android.app.Activity;
 import android.os.Bundle;

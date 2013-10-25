@@ -6,13 +6,13 @@
 
     <application android:icon="@drawable/icon" android:label="@string/app_name">
 
-        <activity android:name="blak.android.example.adapter_attachment.AttachmentsActivity">
+        <activity android:name="blak.android.example.adapterattachment.AttachmentsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
 
-        <activity android:name="blak.android.example.adapter_simple.SimpleAdapterActivity">
+        <activity android:name="blak.android.example.adaptersimple.SimpleAdapterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
