@@ -9,7 +9,7 @@ import java.io.PrintStream;
 public class FileUtilsSamples extends Activity {
     private static final PrintStream out = System.out;
 
-    private void testgetExtension(){
+    private void testgetExtension() {
         out.println(FileUtils.getExtension("/"));
         out.println(FileUtils.getExtension("/mnt.not/"));
         out.println(FileUtils.getExtension("/mnt.not/asd.yes1"));
