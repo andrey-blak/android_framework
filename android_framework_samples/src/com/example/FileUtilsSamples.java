@@ -1,21 +1,26 @@
 package com.example;
 
 import android.app.Activity;
+import android.os.Bundle;
 
 import blak.android.utils.FileUtils;
-
-import java.io.PrintStream;
+import blak.android.utils.MyLog;
 
 public class FileUtilsSamples extends Activity {
-    private static final PrintStream out = System.out;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    private void testgetExtension() {
-        out.println(FileUtils.getExtension("/"));
-        out.println(FileUtils.getExtension("/mnt.not/"));
-        out.println(FileUtils.getExtension("/mnt.not/asd.yes1"));
-        out.println(FileUtils.getExtension("ghj"));
-        out.println(FileUtils.getExtension(".yes2"));
-        out.println(FileUtils.getExtension("."));
-        out.println(FileUtils.getExtension("file.yes3"));
+        testGetExtension();
+    }
+
+    private void testGetExtension() {
+        MyLog.v(FileUtils.getExtension("/"));
+        MyLog.v(FileUtils.getExtension("/mnt.not/"));
+        MyLog.v(FileUtils.getExtension("/mnt.not/asd.yes1"));
+        MyLog.v(FileUtils.getExtension("ghj"));
+        MyLog.v(FileUtils.getExtension(".yes2"));
+        MyLog.v(FileUtils.getExtension("."));
+        MyLog.v(FileUtils.getExtension("file.yes3"));
     }
 }
