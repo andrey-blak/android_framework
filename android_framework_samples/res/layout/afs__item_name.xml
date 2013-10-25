@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/afs__item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="@color/afs__black"
+        android:text="Name"
+        android:background="@color/afs__lt_gray"
+        />

@@ -18,6 +18,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".adapterseparated.SeparatedHeadersActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
