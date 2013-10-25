@@ -5,7 +5,7 @@ import android.view.View;
 import blak.android.Listeners;
 
 public class ItemSubviewClickListener implements View.OnClickListener {
-    private ItemClickListener mItemClickListener;
+    private ItemClickListener mItemClickListener = Listeners.NULL_ITEM_CLICK_LISTENER;
 
     public ItemSubviewClickListener() {
     }
