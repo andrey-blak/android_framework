@@ -1,9 +1,9 @@
 package blak.android;
 
+import blak.android.adapters.ItemClickListener;
+
 import android.view.View;
 import android.widget.AdapterView;
-
-import blak.android.adapters.ItemClickListener;
 
 public class Listeners {
     public static final View.OnClickListener NULL_CLICK_LISTENER = new View.OnClickListener() {
