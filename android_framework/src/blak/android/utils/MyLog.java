@@ -8,17 +8,40 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class MyLog {
-    public static String TAG = "@@@";
+    public static String sTag = "@@@";
 
+    /**
+     * Log with default tag
+     */
     public static void v(Object... params) {
-        vt(TAG, params);
+        vt(sTag, params);
     }
 
+    /**
+     * Log with custom tag
+     */
     public static void vt(String tag, Object... params) {
+        String output = TextUtils.join(" ", params);
+        Log.v(tag, output);
+    }
+
+    /**
+     * Log with default tag without nulls
+     */
+    public static void vn(Object... params) {
+        vtn(sTag, params);
+    }
+
+    /**
+     * Log with custom tag without nulls
+     */
+    public static void vtn(String tag, Object... params) {
         StringBuilder buff = new StringBuilder();
         for (Object object : params) {
-            buff.append(object == null ? "null" : object.toString());
-            buff.append(" ");
+            if (object != null) {
+                buff.append(object.toString());
+                buff.append(" ");
+            }
         }
         Log.v(tag, buff.toString());
     }
