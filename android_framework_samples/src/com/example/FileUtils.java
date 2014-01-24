@@ -9,9 +9,6 @@ import java.io.*;
 public class FileUtils {
     private static final int k = 1024;
 
-    private FileUtils() {
-    }
-
     public static boolean isSDCardWritable() {
         String state = Environment.getExternalStorageState();
         boolean mounted = Environment.MEDIA_MOUNTED.equals(state);
